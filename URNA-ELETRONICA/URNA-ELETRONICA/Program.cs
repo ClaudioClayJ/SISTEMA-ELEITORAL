@@ -1,7 +1,15 @@
-﻿internal class Program
+﻿using BLL;
+using MODELS;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
-    }
+        Eleitor eleitor = new Eleitor("Felisberto", "12345678902");
+
+        EleitorBLL eleitorBLL = new EleitorBLL();
+        eleitorBLL.Inserir(eleitor);
+
+            
+     }
 }

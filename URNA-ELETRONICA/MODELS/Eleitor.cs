@@ -39,10 +39,9 @@ namespace MODELS
         }
 
 
-        public Eleitor(string _nome, double _cpf, string _tituloEleitor)
+        public Eleitor(string _nome, string _tituloEleitor)
         {
             Nome = _nome;
-            Cpf = _cpf;
             TituloEleitor = _tituloEleitor;
             Votou = true;
 
