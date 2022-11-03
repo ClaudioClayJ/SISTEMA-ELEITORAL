@@ -13,10 +13,11 @@ namespace DAL
            
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             SqlCommand cmd = cn.CreateCommand();
-            cmd.CommandText = "INSERT INTO Eleitor(Titulo, Nome) VALUES(@Titulo, @Nome)";
+            cmd.CommandText = "INSERT INTO Eleitor(Titulo, Nome,Votou) VALUES(@Titulo, @Nome,@Votou)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Titulo", _eleitor.TituloEleitor);
             cmd.Parameters.AddWithValue("@Nome", _eleitor.Nome);
+            cmd.Parameters.AddWithValue("@Votou", _eleitor.Votou);
             cmd.Connection.Open();
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();

@@ -2,6 +2,8 @@
 
 using DAL;
 using MODELS;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace BLL
 {
@@ -9,20 +11,29 @@ namespace BLL
     {
         public void Inserir(Eleicao _eleicao)
         {
+            {
 
+                SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = "INSERT INTO Eleicao(Ano, Turno) VALUES(@Ano, @Turno)";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Ano", _eleicao.Ano);
+                cmd.Parameters.AddWithValue("@Turno", _eleicao.Turno);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+
+            }
         }
         public void Excluir(Eleicao _eleicao)
         {
-            EleicaoDAL _eleicaoDAL = new EleicaoDAL();
-            EleicaoDAL.Excluir(_eleicao);
+            EleicaoDAL eleicaoDAL = new EleicaoDAL();
+            eleicaoDAL.Excluir(_eleicao);
         }
         public void Alterar(Eleicao _eleicao)
         {
 
-            if (_eleicao.Nome.Length <= 2)
-            {
-                throw new Exception("O nome do eleitor deve ter mais de duas letras");
-            }
+
             EleicaoDAL eleicaoDAL = new EleicaoDAL();
             eleicaoDAL.Alterar(_eleicao);
         }

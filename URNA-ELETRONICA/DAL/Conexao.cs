@@ -11,8 +11,8 @@ namespace DAL
     {
         public static string StringDeConexao
         {
-            get { return @"User ID=SA;Initial Catalog=URNA;Data Source=.\SQLEXPRESS2019;Password=Senailab02";
+            get { return @"User ID=SA;Initial Catalog=URNA;Data Source=.\SQLEXPRESS2019;Password=Senailab02"; }
         }
     }
 }
-}
+
