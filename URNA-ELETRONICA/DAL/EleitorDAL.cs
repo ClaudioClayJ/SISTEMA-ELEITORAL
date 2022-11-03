@@ -4,7 +4,6 @@ using MODELS;
 using System.Data.SqlClient;
 using System.Data;
 
-
 namespace DAL
 {
     public class EleitorDAL
@@ -34,6 +33,11 @@ namespace DAL
         public List<Eleitor> Buscar()
         {
           return new List<Eleitor>();
+        }
+
+        public List<Eleitor> Buscar(string tituloEleitor)
+        {
+            throw new NotImplementedException();
         }
     }
 }
