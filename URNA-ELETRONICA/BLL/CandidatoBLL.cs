@@ -25,7 +25,8 @@ namespace BLL
         }
         public void Excluir(Candidato _candidato)
         {
-
+            CandidatoDAL candidatoDAL = new CandidatoDAL();
+            candidatoDAL.Excluir(_candidato);
         }
         public void Alterar(Candidato _candidato)
         {

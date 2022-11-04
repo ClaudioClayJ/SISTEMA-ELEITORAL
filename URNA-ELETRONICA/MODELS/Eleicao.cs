@@ -7,6 +7,14 @@ namespace MODELS
         private int turno;
         private List<Candidato> candidatos;
         private List<Eleitor> eleitores;
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
 
         public int Ano
         {
@@ -32,10 +40,11 @@ namespace MODELS
             set { eleitores = value; }
         }
 
-        public Eleicao(int _ano, int _turno)
+        public Eleicao(int _ano, int _turno, int _id)
         {
             Ano = _ano;
             Turno = _turno;
+            Id = _id;
         }
         public void Exibir()
         {

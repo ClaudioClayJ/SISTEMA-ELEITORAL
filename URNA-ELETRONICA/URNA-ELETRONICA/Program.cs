@@ -5,18 +5,49 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        /*Eleitor eleitor = new Eleitor("Felisberto", "12345678902");
+        try
+        {
+        Eleitor eleitor = new Eleitor("Felisberto", "12345678902",1);
 
         EleitorBLL eleitorBLL = new EleitorBLL();
-        eleitorBLL.Inserir(eleitor);*/
+        eleitorBLL.Excluir(eleitor);
 
-        /*Candidato candidato = new Candidato("Guga", 15);
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            
+        }
+
+
+
+        try
+        {
+        Candidato candidato = new Candidato("Guga", 15,1);
 
         CandidatoBLL candidatoBLL = new CandidatoBLL();
-        candidatoBLL.Inserir(candidato);*/
+        candidatoBLL.Excluir(candidato);
 
-        Eleicao eleicao = new Eleicao(2002, 1);
+        }
+        catch (Exception ex)
+        {
+          Console.WriteLine(ex.Message);
+        }
+
+
+
+
+        try
+        {
+        Eleicao eleicao = new Eleicao(2002, 1,1);
         EleicaoBLL eleicaoBLL = new EleicaoBLL();
-        eleicaoBLL.Inserir(eleicao);
+        eleicaoBLL.Excluir(eleicao);
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }

@@ -4,8 +4,15 @@
     {
 		private string nome;
         private double numero;
+        private int id;
 
-		public string Nome
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string Nome
 		{
 			get { return nome; }
 			set { nome = value; }
@@ -19,10 +26,11 @@
         }
 
 
-        public Candidato(string _nome, double _numero)
+        public Candidato(string _nome, double _numero, int _id)
         {
-           nome = _nome;
-           numero = _numero;
+           Nome = _nome;
+           Numero = _numero;
+           Id = _id;
         }
         
  public void Exibir()

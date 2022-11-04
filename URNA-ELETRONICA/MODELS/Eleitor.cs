@@ -12,6 +12,7 @@ namespace MODELS
         private double cpf;
         private string tituloEleitor;
         private bool votou;
+        private int id;
 
 		public string Nome
 		{
@@ -39,12 +40,19 @@ namespace MODELS
         }
 
 
-        public Eleitor(string _nome, string _tituloEleitor)
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+
+        public Eleitor(string _nome, string _tituloEleitor, int _id)
         {
             Nome = _nome;
             TituloEleitor = _tituloEleitor;
             Votou = true;
-
+            Id = _id;
         }
 
         public void Votar()
