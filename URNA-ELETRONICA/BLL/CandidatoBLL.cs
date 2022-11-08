@@ -9,19 +9,10 @@ namespace BLL
     {
         public void Inserir(Candidato _candidato)
         {
-            {
 
-                SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "INSERT INTO Candidato(Numero, Nome) VALUES(@Numero, @Nome)";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Numero", _candidato.Numero);
-                cmd.Parameters.AddWithValue("@Nome", _candidato.Nome);
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
+            CandidatoDAL candidatoDAL = new CandidatoDAL();
+            candidatoDAL.Inserir(_candidato);
 
-            }
         }
         public void Excluir(Candidato _candidato)
         {
@@ -30,7 +21,8 @@ namespace BLL
         }
         public void Alterar(Candidato _candidato)
         {
-
+            CandidatoDAL _candidatoDAL = new CandidatoDAL();
+            _candidatoDAL.Alterar(_candidato);
         }
         public List<Candidato> Buscar(int _numero)
         {

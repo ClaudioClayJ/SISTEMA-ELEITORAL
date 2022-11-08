@@ -1,5 +1,7 @@
 ﻿using MODELS;
 using DAL;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace BLL
 {
@@ -23,12 +25,9 @@ namespace BLL
         public void Alterar(Eleitor _eleitor)
         {
 
-            if (_eleitor.Nome.Length <= 2)
-            {
-                throw new Exception("O nome do eleitor deve ter mais de duas letras");
-            }
             EleitorDAL eleitorDAL = new EleitorDAL();
             eleitorDAL.Alterar(_eleitor);
+
 
         }
         public List<Eleitor> Buscar(string _tituloEleitor)

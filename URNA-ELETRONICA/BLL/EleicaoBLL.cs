@@ -11,19 +11,8 @@ namespace BLL
     {
         public void Inserir(Eleicao _eleicao)
         {
-            {
-
-                SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "INSERT INTO Eleicao(Ano, Turno) VALUES(@Ano, @Turno)";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Ano", _eleicao.Ano);
-                cmd.Parameters.AddWithValue("@Turno", _eleicao.Turno);
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
-
-            }
+            EleicaoDAL eleicaoDAL = new EleicaoDAL();
+            eleicaoDAL.Inserir(_eleicao);
         }
         public void Excluir(Eleicao _eleicao)
         {
@@ -32,7 +21,6 @@ namespace BLL
         }
         public void Alterar(Eleicao _eleicao)
         {
-
 
             EleicaoDAL eleicaoDAL = new EleicaoDAL();
             eleicaoDAL.Alterar(_eleicao);

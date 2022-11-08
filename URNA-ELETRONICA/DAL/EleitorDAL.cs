@@ -45,7 +45,23 @@ namespace DAL
         }
         public void Alterar(Eleitor _eleitor)
         {
-
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            SqlCommand cmd = cn.CreateCommand();
+            try
+            {
+                cmd.CommandText = "UPDATE  Eleitor SET Titulo = @Titulo, Nome = @Nome,Votou = @Votou, Id = @Id WHERE Id = @Id";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Titulo", _eleitor.TituloEleitor);
+                cmd.Parameters.AddWithValue("@Nome", _eleitor.Nome);
+                cmd.Parameters.AddWithValue("@Votou", _eleitor.Votou);
+                cmd.Parameters.AddWithValue("@Id", _eleitor.Id);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
         }
         public List<Eleitor> Buscar()
         {
