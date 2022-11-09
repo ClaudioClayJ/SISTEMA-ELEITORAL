@@ -30,10 +30,10 @@ namespace BLL
 
 
         }
-        public List<Eleitor> Buscar(string _tituloEleitor)
+        public DataTable BuscarPorTitulo(string _tituloEleitor)
         {
             EleitorDAL eleitorDAL = new EleitorDAL();
-            return eleitorDAL.Buscar(_tituloEleitor);
+            return eleitorDAL.BuscarPorTitulo(_tituloEleitor);
         }
     }
 }

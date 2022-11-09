@@ -7,43 +7,47 @@ internal class Program
     {
         try
         {
-        Eleitor eleitor = new Eleitor("Felisberto", "12345678902",1);
-
-        EleitorBLL eleitorBLL = new EleitorBLL();
-        eleitorBLL.Excluir(eleitor);
-
-
+            Eleitor eleitor = new Eleitor("José", "12345678911", 1);
+            EleitorBLL eleitorBLL = new EleitorBLL();
+            eleitorBLL.Inserir(eleitor);
+            eleitor.Nome = "Dagorlina";
+            eleitor.TituloEleitor = "4582001";
+            eleitor.Votou = false;
+            eleitor.Id = 3;
+            eleitorBLL.Alterar(eleitor);
+            //eleitor.Votar();
+            eleitorBLL.Excluir(eleitor);
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
-            
         }
-
-
 
         try
         {
-        Candidato candidato = new Candidato("Guga", 15,1);
-
-        CandidatoBLL candidatoBLL = new CandidatoBLL();
-        candidatoBLL.Excluir(candidato);
-
+            Candidato candidato = new Candidato("Babuino", 17, 3);
+            CandidatoBLL candidatoBLL = new CandidatoBLL();
+            candidato.Id = 3;
+            candidato.Nome = "Dagoberto";
+            candidato.Numero = 22;
+            candidatoBLL.Inserir(candidato);
+            candidatoBLL.Alterar(candidato);
+            candidatoBLL.Excluir(candidato);
+        
         }
         catch (Exception ex)
         {
-          Console.WriteLine(ex.Message);
+            Console.WriteLine(ex.Message);
         }
-
-
-
 
         try
         {
-        Eleicao eleicao = new Eleicao(2002, 1,1);
-        EleicaoBLL eleicaoBLL = new EleicaoBLL();
-        eleicaoBLL.Excluir(eleicao);
-
+            Eleicao eleicao = new Eleicao(2022, 1, 1);
+            EleicaoBLL eleicaoBLL = new EleicaoBLL();
+            eleicao.Id = 2;
+            //eleicao.Ano = 2022;
+            //eleicao.Turno = 2;
+            eleicaoBLL.Excluir(eleicao);
         }
         catch (Exception ex)
         {

@@ -73,9 +73,26 @@ namespace DAL
 
             }
         }
-        public List<Eleicao> Buscar(int _ano, int _turno)
+        public DataTable BuscarPorEleicao(int _id)
         {
-            return new List<Eleicao>();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Id = @Id";
+                da.SelectCommand.CommandType = CommandType.Text;
+                da.SelectCommand.Parameters.AddWithValue("Eleicao", _id);
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

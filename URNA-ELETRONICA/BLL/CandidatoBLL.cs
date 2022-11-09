@@ -21,12 +21,13 @@ namespace BLL
         }
         public void Alterar(Candidato _candidato)
         {
-            CandidatoDAL _candidatoDAL = new CandidatoDAL();
-            _candidatoDAL.Alterar(_candidato);
+            CandidatoDAL candidatoDAL = new CandidatoDAL();
+            candidatoDAL.Alterar(_candidato);
         }
-        public List<Candidato> Buscar(int _numero)
+        public DataTable BuscarPorNumero(int _numero)
         {
-            return new List<Candidato>();
+            CandidatoDAL candidatoDAL = new CandidatoDAL();
+            return  candidatoDAL.BuscarPorNumero( _numero);
         }
     }
 }

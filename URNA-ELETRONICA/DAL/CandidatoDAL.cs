@@ -71,9 +71,26 @@ namespace DAL
 
             }
         }
-        public List<Candidato> Buscar(int _numero)
+        public DataTable BuscarPorNumero(int _numero)
         {
-            return new List<Candidato>();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Numero FROM Candidato WHERE Numero = @Numero";
+                da.SelectCommand.CommandType = CommandType.Text;
+                da.SelectCommand.Parameters.AddWithValue("Id", _numero);
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

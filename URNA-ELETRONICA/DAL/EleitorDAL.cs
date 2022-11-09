@@ -3,6 +3,7 @@
 using MODELS;
 using System.Data.SqlClient;
 using System.Data;
+using System.Globalization;
 
 namespace DAL
 {
@@ -63,14 +64,27 @@ namespace DAL
                 cmd.Connection.Close();
             }
         }
-        public List<Eleitor> Buscar()
+        public  DataTable BuscarPorTitulo(string _tituloEleitor)
         {
-            return new List<Eleitor>();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo, Votou FROM Eleitor WHERE Titulo = @Titulo";
+                da.SelectCommand.CommandType = CommandType.Text;
+                da.SelectCommand.Parameters.AddWithValue("@Titulo", _tituloEleitor);
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+               cn.Close();
+            }
         }
 
-        public List<Eleitor> Buscar(string tituloEleitor)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
