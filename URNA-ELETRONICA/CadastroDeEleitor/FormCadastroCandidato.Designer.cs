@@ -1,0 +1,144 @@
+﻿namespace UiTerminalWindows
+{
+    partial class FormCadastroCandidato
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LabelNome = new System.Windows.Forms.Label();
+            this.LabelNumero = new System.Windows.Forms.Label();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.textBoxNumero = new System.Windows.Forms.TextBox();
+            this.buttonSalvarCandidato = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.bindingSourceCandidato = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCandidato)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(320, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cadastro Candidato";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // LabelNome
+            // 
+            this.LabelNome.AutoSize = true;
+            this.LabelNome.Location = new System.Drawing.Point(3, 57);
+            this.LabelNome.Name = "LabelNome";
+            this.LabelNome.Size = new System.Drawing.Size(50, 20);
+            this.LabelNome.TabIndex = 1;
+            this.LabelNome.Text = "Nome";
+            this.LabelNome.Click += new System.EventHandler(this.LabelNome_Click);
+            // 
+            // LabelNumero
+            // 
+            this.LabelNumero.AutoSize = true;
+            this.LabelNumero.Location = new System.Drawing.Point(3, 142);
+            this.LabelNumero.Name = "LabelNumero";
+            this.LabelNumero.Size = new System.Drawing.Size(63, 20);
+            this.LabelNumero.TabIndex = 2;
+            this.LabelNumero.Text = "Numero";
+            this.LabelNumero.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Location = new System.Drawing.Point(3, 88);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(317, 27);
+            this.textBoxNome.TabIndex = 3;
+            // 
+            // textBoxNumero
+            // 
+            this.textBoxNumero.Location = new System.Drawing.Point(3, 189);
+            this.textBoxNumero.Name = "textBoxNumero";
+            this.textBoxNumero.Size = new System.Drawing.Size(317, 27);
+            this.textBoxNumero.TabIndex = 4;
+            // 
+            // buttonSalvarCandidato
+            // 
+            this.buttonSalvarCandidato.Location = new System.Drawing.Point(494, 409);
+            this.buttonSalvarCandidato.Name = "buttonSalvarCandidato";
+            this.buttonSalvarCandidato.Size = new System.Drawing.Size(94, 29);
+            this.buttonSalvarCandidato.TabIndex = 7;
+            this.buttonSalvarCandidato.Text = "Salvar";
+            this.buttonSalvarCandidato.UseVisualStyleBackColor = true;
+            this.buttonSalvarCandidato.Click += new System.EventHandler(this.buttonSalvarCandidato_Click);
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.Location = new System.Drawing.Point(613, 408);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
+            this.buttonCancelar.TabIndex = 8;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            // 
+            // bindingSourceCandidato
+            // 
+            this.bindingSourceCandidato.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
+            // FormCadastroCandidato
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.buttonSalvarCandidato);
+            this.Controls.Add(this.textBoxNumero);
+            this.Controls.Add(this.textBoxNome);
+            this.Controls.Add(this.LabelNumero);
+            this.Controls.Add(this.LabelNome);
+            this.Controls.Add(this.label1);
+            this.Name = "FormCadastroCandidato";
+            this.Text = "FormCadastroCandidato";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCandidato)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private Label label1;
+        private Label LabelNome;
+        private Label LabelNumero;
+        private TextBox textBoxNome;
+        private TextBox textBoxNumero;
+        private Label labelIdCandidato;
+        private TextBox textBoxIdCandidato;
+        private Button buttonSalvarCandidato;
+        private Button buttonCancelar;
+        private BindingSource bindingSourceCandidato;
+    }
+}
