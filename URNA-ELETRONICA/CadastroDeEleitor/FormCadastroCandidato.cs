@@ -53,5 +53,12 @@ namespace UiTerminalWindows
         {
 
         }
+
+        private void FormCadastroCandidato_Load(object sender, EventArgs e)
+        {
+            Candidato candidato = new Candidato();
+            bindingSourceCandidato.DataSource = candidato;
+            bindingSourceCandidato.AddNew();
+        }
     }
 }

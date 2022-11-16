@@ -32,6 +32,10 @@
            Numero = _numero;
            Id = _id;
         }
+        public Candidato()
+        {
+
+        }
         
  public void Exibir()
         {

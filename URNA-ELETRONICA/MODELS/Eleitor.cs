@@ -54,6 +54,10 @@ namespace MODELS
             Votou = true;
             Id = _id;
         }
+        public Eleitor()
+        {
+
+        }
 
         public void Votar()
         {
