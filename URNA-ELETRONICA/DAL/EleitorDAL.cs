@@ -73,9 +73,9 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo, Votou FROM Eleitor WHERE Titulo = @Titulo";
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo, Votou FROM Eleitor WHERE Titulo LIKE @Titulo";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("@Titulo", _tituloEleitor);
+                da.SelectCommand.Parameters.AddWithValue("@Titulo", "%" + _tituloEleitor + "%");
                 cn.Open();
                 da.Fill(dt);
                 return dt;
