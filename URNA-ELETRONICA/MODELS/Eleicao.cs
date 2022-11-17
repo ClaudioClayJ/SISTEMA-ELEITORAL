@@ -46,6 +46,10 @@ namespace MODELS
             Turno = _turno;
             Id = _id;
         }
+        public Eleicao()
+        {
+                
+        }
         public void Exibir()
         {
             Console.WriteLine("Ano da Eleicao: " + Ano);

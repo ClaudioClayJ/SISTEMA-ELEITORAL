@@ -16,7 +16,7 @@ namespace DAL
                 try
                 {
 
-                cmd.CommandText = "INSERT INTO Eleicao(Ano, Turno) VALUES(@Ano, @Turnoº)";
+                cmd.CommandText = "INSERT INTO Eleicao(Ano, Turno) VALUES(@Ano, @Turno)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Ano", _eleicao.Ano);
                 cmd.Parameters.AddWithValue("@Turno", _eleicao.Turno);
