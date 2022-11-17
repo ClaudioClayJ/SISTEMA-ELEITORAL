@@ -28,5 +28,19 @@ namespace UiTerminalWindows
             EleitorBLL eleitor = new EleitorBLL();
             bindingSourceEleitor.DataSource = eleitor.BuscarPorTitulo("");
         }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            EleitorBLL eleitor = new EleitorBLL();
+            bindingSourceEleitor.DataSource = eleitor.BuscarPorTitulo(textBoxBuscar.Text);
+        }
+
+        private void buttonInserir_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroEleitor frm = new FormCadastroEleitor())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
