@@ -29,5 +29,17 @@ namespace BLL
             CandidatoDAL candidatoDAL = new CandidatoDAL();
             return  candidatoDAL.BuscarPorNumero( _numero);
         }
+
+        public DataTable BuscarTodos()
+        {
+            CandidatoDAL candidatoDAL = new CandidatoDAL();
+            return candidatoDAL.BuscarTodos();
+        }
+
+        public DataTable BuscarPorNome(string _nome)
+        {
+            CandidatoDAL candidatoDAL = new CandidatoDAL();
+            return candidatoDAL.BuscarPorNome(_nome);
+        }
     }
 }

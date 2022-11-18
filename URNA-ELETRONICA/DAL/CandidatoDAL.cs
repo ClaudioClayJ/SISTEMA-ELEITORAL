@@ -3,6 +3,7 @@
 using MODELS;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace DAL
 {
@@ -32,6 +33,23 @@ namespace DAL
                 }
             }
         }
+
+        public void Excluir(int _numero)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            SqlCommand cmd = cn.CreateCommand();
+            try
+            {
+                cmd.CommandText = "DELETE FROM Candidato WHERE Numero = @Numero";
+                cmd.Parameters.AddWithValue("@Numero", _numero);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public void Excluir(Candidato _candidato)
         {
 
@@ -39,8 +57,8 @@ namespace DAL
             SqlCommand cmd = cn.CreateCommand();
             try
             {
-                cmd.CommandText = "DELETE FROM Eleitor WHERE Id = @Id";
-                cmd.Parameters.AddWithValue("@Id", _candidato.Id);
+                cmd.CommandText = "DELETE FROM Candidato WHERE Numero = @Numero";
+                cmd.Parameters.AddWithValue("@Numero", _candidato.Numero);
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -73,7 +91,9 @@ namespace DAL
         }
         public DataTable BuscarPorNumero(int _numero)
         {
+
             SqlDataAdapter da = new SqlDataAdapter();
+
             DataTable dt = new DataTable();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
@@ -82,7 +102,55 @@ namespace DAL
                 da.SelectCommand = cn.CreateCommand();
                 da.SelectCommand.CommandText = "SELECT  Id ,Nome , Numero FROM Candidato WHERE Numero = @Numero";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("Id", _numero);
+                da.SelectCommand.Parameters.AddWithValue("@Numero", _numero);
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public DataTable BuscarTodos()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Numero FROM Candidato ";
+                da.SelectCommand.CommandType = CommandType.Text;
+   
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+           
+        }
+
+        public DataTable BuscarPorNome(string _nome)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Numero FROM Candidato WHERE Nome = @Nome";
+                da.SelectCommand.CommandType = CommandType.Text;
+                da.SelectCommand.Parameters.AddWithValue("@Nome", _nome);
                 cn.Open();
                 da.Fill(dt);
                 return dt;
