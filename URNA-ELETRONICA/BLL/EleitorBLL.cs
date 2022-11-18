@@ -16,10 +16,15 @@ namespace BLL
             EleitorDAL eleitorDAL = new EleitorDAL();
             eleitorDAL.Inserir(_eleitor);
         }
+
+        public  void Excluir(int _id)
+        {
+            EleitorDAL _eleitorDAL = new EleitorDAL();
+            _eleitorDAL.Excluir(_id);
+        }
         public void Excluir(Eleitor _eleitor)
         {
-            EleitorDAL eleitorDAL = new EleitorDAL();
-            eleitorDAL.Excluir(_eleitor);
+            Excluir(_eleitor.Id);
 
         }
         public void Alterar(Eleitor _eleitor)

@@ -40,6 +40,8 @@
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonInserir = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleitor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             this.votouDataGridViewCheckBoxColumn,
             this.idDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bindingSourceEleitor;
-            this.dataGridView1.Location = new System.Drawing.Point(76, 111);
+            this.dataGridView1.Location = new System.Drawing.Point(76, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -120,7 +122,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(76, 9);
+            this.label1.Location = new System.Drawing.Point(76, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 38);
             this.label1.TabIndex = 1;
@@ -128,14 +130,14 @@
             // 
             // textBoxBuscar
             // 
-            this.textBoxBuscar.Location = new System.Drawing.Point(76, 69);
+            this.textBoxBuscar.Location = new System.Drawing.Point(76, 112);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(672, 27);
             this.textBoxBuscar.TabIndex = 2;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(826, 67);
+            this.buttonBuscar.Location = new System.Drawing.Point(826, 109);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscar.TabIndex = 3;
@@ -145,7 +147,7 @@
             // 
             // buttonInserir
             // 
-            this.buttonInserir.Location = new System.Drawing.Point(75, 572);
+            this.buttonInserir.Location = new System.Drawing.Point(75, 614);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(94, 29);
             this.buttonInserir.TabIndex = 4;
@@ -153,18 +155,40 @@
             this.buttonInserir.UseVisualStyleBackColor = true;
             this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(477, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 41);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Buscar Eleitor";
+            // 
+            // buttonExcluir
+            // 
+            this.buttonExcluir.Location = new System.Drawing.Point(217, 615);
+            this.buttonExcluir.Name = "buttonExcluir";
+            this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
+            this.buttonExcluir.TabIndex = 6;
+            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
+            // 
             // FormConsultaEleitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 691);
+            this.Controls.Add(this.buttonExcluir);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonInserir);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormConsultaEleitor";
-            this.Text = "FormConsultaEleitor";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.FormConsultaEleitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleitor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -186,5 +210,7 @@
         private TextBox textBoxBuscar;
         private Button buttonBuscar;
         private Button buttonInserir;
+        private Label label2;
+        private Button buttonExcluir;
     }
 }

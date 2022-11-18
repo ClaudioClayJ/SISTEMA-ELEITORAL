@@ -4,6 +4,7 @@ using MODELS;
 using System.Data.SqlClient;
 using System.Data;
 using System.Globalization;
+using System.Security.Cryptography;
 
 namespace DAL
 {
@@ -28,6 +29,26 @@ namespace DAL
                 cmd.Connection.Close();
             }
         }
+        public void Excluir(int _id)
+        {
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            SqlCommand cmd = cn.CreateCommand();
+            try
+            {
+                cmd.CommandText = "DELETE FROM Eleitor WHERE Id = @Id";
+                cmd.Parameters.AddWithValue("@Id",_id);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
+        }
+
         public void Excluir(Eleitor _eleitor)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

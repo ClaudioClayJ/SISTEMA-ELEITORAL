@@ -1,4 +1,5 @@
 ﻿using BLL;
+using MODELS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,6 +42,19 @@ namespace UiTerminalWindows
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Você deseja excluir este eleitor?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+            return;
+
+            EleitorBLL eleitorBLL = new EleitorBLL();
+
+            eleitorBLL.Excluir(Convert.ToInt32(((DataRowView)bindingSourceEleitor.Current).Row["Id"]));
+
+            MessageBox.Show("Registro excluido com sucesso");
+
         }
     }
 }
