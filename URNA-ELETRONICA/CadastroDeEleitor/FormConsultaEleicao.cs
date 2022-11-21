@@ -56,5 +56,13 @@ namespace UiTerminalWindows
 
             MessageBox.Show("Registro excluido com sucesso");
         }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroEleicao frm = new FormCadastroEleicao(Convert.ToInt32(((DataRowView)bindingSourceEleicao.Current).Row["Id"])))
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

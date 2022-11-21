@@ -58,11 +58,11 @@ namespace DAL
             try
             {
 
-                cmd.CommandText = "UPDADE Eleicao SET Ano = @Ano, Turno= @Turno, Id= @Id WHERE Id = @Id";
+                cmd.CommandText = "UPDADE Eleicao SET Ano = @Ano, Turno= @Turno WHERE Id = @Id";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Ano", _eleicao.Ano);
                 cmd.Parameters.AddWithValue("@Turno", _eleicao.Turno);
-                cmd.Parameters.AddWithValue("@Turno", _eleicao.Id);
+                cmd.Parameters.AddWithValue("@Id", _eleicao.Id);
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
             }

@@ -15,33 +15,32 @@ namespace UiTerminalWindows
     public partial class FormCadastroCandidato : Form
     {
         private int id;
-        public FormCadastroCandidato()
+        public FormCadastroCandidato(int _id=0)
         {
             InitializeComponent();
-            id = 0;
+            id = _id; 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LabelNome_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonSalvarCandidato_Click(object sender, EventArgs e)
         {
-            bindingSourceCandidato.EndEdit();
             CandidatoBLL candidatoBLL = new CandidatoBLL();
-            candidatoBLL.Inserir((Candidato)bindingSourceCandidato.Current);
-            MessageBox.Show("Candidato salvo com sucesso");
+            if (id == 0)
+            {
+                bindingSourceCandidato.EndEdit();
+                candidatoBLL.Inserir((Candidato)bindingSourceCandidato.Current);
+                MessageBox.Show("Candidato salvo com sucesso");
+            }
+            else
+            {
+                Candidato candidato = new Candidato();
+                candidato.Id = id;
+                candidato.Nome = textBoxNome.Text;
+                candidato.Numero = Convert.ToInt32(textBoxNumero.Text);
+                candidatoBLL.Alterar(candidato);
+                MessageBox.Show("Candidato alterado com sucesso!");
+            }
+            Close();
 
         }
 
@@ -58,9 +57,18 @@ namespace UiTerminalWindows
 
         private void FormCadastroCandidato_Load(object sender, EventArgs e)
         {
-            Candidato candidato = new Candidato();
-            bindingSourceCandidato.DataSource = candidato;
-            bindingSourceCandidato.AddNew();
+            if (id == 0)
+            {
+                Candidato candidato = new Candidato();
+                bindingSourceCandidato.DataSource = candidato;
+                bindingSourceCandidato.AddNew();
+            }
+            else
+            {
+                CandidatoBLL candidatoBLL = new CandidatoBLL();
+                bindingSourceCandidato.DataSource = candidatoBLL.BuscarPorId(id);
+            }
+
         }
     }
 }

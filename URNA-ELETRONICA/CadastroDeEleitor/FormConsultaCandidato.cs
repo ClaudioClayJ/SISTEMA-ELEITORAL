@@ -22,7 +22,7 @@ namespace UiTerminalWindows
         private void FormConsultaCandidato_Load(object sender, EventArgs e)
         {
             CandidatoBLL candidatoBLL = new CandidatoBLL();
-           // bindingSourceCandidato.DataSource = candidatoBLL.BuscarTodos();//
+            bindingSourceCandidato.DataSource = candidatoBLL.BuscarTodos();
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)

@@ -2,6 +2,7 @@
 using MODELS;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace BLL
 {
@@ -40,6 +41,12 @@ namespace BLL
         {
             CandidatoDAL candidatoDAL = new CandidatoDAL();
             return candidatoDAL.BuscarPorNome(_nome);
+        }
+
+        public object BuscarPorId(int _id)
+        {
+            CandidatoDAL candidatoDAL = new CandidatoDAL();
+            return candidatoDAL.BuscarPorId(_id);
         }
     }
 }

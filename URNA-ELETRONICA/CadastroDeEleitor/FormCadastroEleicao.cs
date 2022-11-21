@@ -14,9 +14,11 @@ namespace UiTerminalWindows
 {
     public partial class FormCadastroEleicao : Form
     {
-        public FormCadastroEleicao()
+        private int id;
+        public FormCadastroEleicao(int id = 0)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void FormCadastroEleicao_Load(object sender, EventArgs e)
@@ -28,10 +30,23 @@ namespace UiTerminalWindows
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            bindingSourceEleicao.EndEdit();
             EleicaoBLL eleicaoBLL = new EleicaoBLL();
-            eleicaoBLL.Inserir((Eleicao)bindingSourceEleicao.Current);
-            MessageBox.Show("Ano e Turno salvos com sucesso");
+            if (id == 0)
+            {
+                bindingSourceEleicao.EndEdit();
+                eleicaoBLL.Inserir((Eleicao)bindingSourceEleicao.Current);
+                MessageBox.Show("Eleicao salvo com sucesso");
+            }
+            else
+            {
+                Eleicao eleicao = new Eleicao();
+                eleicao.Id = id;
+                eleicao.Ano = Convert.ToInt32(textBoxAno.Text);
+                eleicao.Turno = Convert.ToInt32(textBoxTurno.Text);
+                eleicaoBLL.Alterar(eleicao);
+                MessageBox.Show("Eleição alterado com sucesso!");
+            }
+            Close();
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

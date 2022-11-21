@@ -50,7 +50,6 @@
             this.label1.Size = new System.Drawing.Size(297, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro Candidato";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // LabelNome
             // 
@@ -60,7 +59,6 @@
             this.LabelNome.Size = new System.Drawing.Size(50, 20);
             this.LabelNome.TabIndex = 1;
             this.LabelNome.Text = "Nome";
-            this.LabelNome.Click += new System.EventHandler(this.LabelNome_Click);
             // 
             // LabelNumero
             // 
@@ -70,7 +68,6 @@
             this.LabelNumero.Size = new System.Drawing.Size(63, 20);
             this.LabelNumero.TabIndex = 2;
             this.LabelNumero.Text = "Numero";
-            this.LabelNumero.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxNome
             // 

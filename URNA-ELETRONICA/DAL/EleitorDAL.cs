@@ -71,7 +71,7 @@ namespace DAL
             SqlCommand cmd = cn.CreateCommand();
             try
             {
-                cmd.CommandText = "UPDATE  Eleitor SET Titulo = @Titulo, Nome = @Nome,Votou = @Votou, Id = @Id WHERE Id = @Id";
+                cmd.CommandText = "UPDATE  Eleitor SET Titulo = @Titulo, Nome = @Nome,Votou = @Votou WHERE Id = @Id";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Titulo", _eleitor.TituloEleitor);
                 cmd.Parameters.AddWithValue("@Nome", _eleitor.Nome);
