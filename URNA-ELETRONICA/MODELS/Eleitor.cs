@@ -9,7 +9,7 @@ namespace MODELS
     public class Eleitor
     {
 		private string nome;
-        private double cpf;
+        //private double cpf;//
         private string tituloEleitor;
         private bool votou;
         private int id;
@@ -21,11 +21,11 @@ namespace MODELS
 		}
 
 
-        public double Cpf
+       /* public double Cpf
         {
             get { return cpf; }
             set { cpf = value; }
-        }
+        }*/
 
         public string TituloEleitor
         {
@@ -69,11 +69,6 @@ namespace MODELS
             {
                 
             }
-        }
-        public void Exibir()
-        {
-            Console.WriteLine("Nome: " + Nome);
-            Console.WriteLine("CPF: " + Cpf);
         }
      }
         

@@ -116,7 +116,7 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo, Votou FROM Eleitor WHERE Nome = @Nome" ;
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo as tituloEleitor, Votou FROM Eleitor WHERE Nome = @Nome" ;
                 da.SelectCommand.CommandType = CommandType.Text;
                 da.SelectCommand.Parameters.AddWithValue("@Nome", _nome);
                 cn.Open();
@@ -138,7 +138,7 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo, Votou FROM Eleitor WHERE Id = @Id";
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo as tituloEleitor, Votou FROM Eleitor WHERE Id = @Id";
                 da.SelectCommand.CommandType = CommandType.Text;
                 da.SelectCommand.Parameters.AddWithValue("@Id", _id);
                 cn.Open();

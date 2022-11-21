@@ -84,7 +84,7 @@ namespace DAL
                 da.SelectCommand = cn.CreateCommand();
                 da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Ano = @Ano";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("Eleicao", _ano);
+                da.SelectCommand.Parameters.AddWithValue("Ano", _ano);
                 cn.Open();
                 da.Fill(dt);
                 return dt;
@@ -107,7 +107,7 @@ namespace DAL
                 da.SelectCommand = cn.CreateCommand();
                 da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Turno = @Turno";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("Eleicao", _turno);
+                da.SelectCommand.Parameters.AddWithValue("Turno", _turno);
                 cn.Open();
                 da.Fill(dt);
                 return dt;

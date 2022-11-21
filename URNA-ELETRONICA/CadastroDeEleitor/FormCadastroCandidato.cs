@@ -14,9 +14,11 @@ namespace UiTerminalWindows
 {
     public partial class FormCadastroCandidato : Form
     {
+        private int id;
         public FormCadastroCandidato()
         {
             InitializeComponent();
+            id = 0;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -64,7 +64,10 @@ namespace UiTerminalWindows
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-
+            using (FormCadastroCandidato frm = new FormCadastroCandidato(Convert.ToInt32(((DataRowView)bindingSourceCandidato.Current).Row["Id"])))
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }
