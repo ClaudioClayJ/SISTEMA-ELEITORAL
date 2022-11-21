@@ -45,7 +45,7 @@ namespace UiTerminalWindows
 
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            using (FormCadastroEleitor frm = new FormCadastroEleitor())
+            using (FormCadastroEleitor frm = new FormCadastroEleitor(2))
             {
                 frm.ShowDialog();
             }
@@ -53,8 +53,8 @@ namespace UiTerminalWindows
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Você deseja excluir este eleitor?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-            return;
+            if (MessageBox.Show("Você deseja excluir este candidato?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
 
             EleitorBLL eleitorBLL = new EleitorBLL();
 
@@ -62,6 +62,19 @@ namespace UiTerminalWindows
 
             MessageBox.Show("Registro excluido com sucesso");
 
+        }
+
+        private void labelAlterar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroEleitor frm = new FormCadastroEleitor(Convert.ToInt32(((DataRowView)bindingSourceEleitor.Current).Row["Id"])))
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }

@@ -46,5 +46,11 @@ namespace BLL
             EleitorDAL eleitorDAL = new EleitorDAL();
             return eleitorDAL.BuscarPorNome(_nome);
         }
+
+        public object BuscarPorId(int _id)
+        {
+            EleitorDAL eleitorDAL = new EleitorDAL();
+            return eleitorDAL.BuscarPorId(_id);
+        }
     }
 }

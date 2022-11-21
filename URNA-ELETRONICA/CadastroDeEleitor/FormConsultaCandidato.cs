@@ -22,7 +22,7 @@ namespace UiTerminalWindows
         private void FormConsultaCandidato_Load(object sender, EventArgs e)
         {
             CandidatoBLL candidatoBLL = new CandidatoBLL();
-            //bindingSourceCandidato.DataSource = candidatoBLL.BuscarTodos();//
+           // bindingSourceCandidato.DataSource = candidatoBLL.BuscarTodos();//
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -55,11 +55,16 @@ namespace UiTerminalWindows
             if (MessageBox.Show("Você deseja excluir este candidato?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            EleitorBLL eleitorBLL = new EleitorBLL();
+            CandidatoBLL candidatoBLL = new CandidatoBLL();
 
-            eleitorBLL.Excluir(Convert.ToInt32(((DataRowView)bindingSourceCandidato.Current).Row["Numero"]));
+            candidatoBLL.Excluir(Convert.ToInt32(((DataRowView)bindingSourceCandidato.Current).Row["Id"]));
 
             MessageBox.Show("Registro excluido com sucesso");
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

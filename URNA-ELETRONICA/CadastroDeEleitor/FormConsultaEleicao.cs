@@ -52,7 +52,7 @@ namespace UiTerminalWindows
 
             EleicaoBLL eleicaoBLL = new EleicaoBLL();
 
-            eleicaoBLL.Excluir();
+            eleicaoBLL.Excluir(Convert.ToInt32(((DataRowView)bindingSourceEleicao.Current).Row["Id"]));
 
             MessageBox.Show("Registro excluido com sucesso");
         }

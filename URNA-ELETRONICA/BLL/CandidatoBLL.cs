@@ -14,10 +14,10 @@ namespace BLL
             candidatoDAL.Inserir(_candidato);
 
         }
-        public void Excluir(Candidato _candidato)
+        public void Excluir(int _id)
         {
             CandidatoDAL candidatoDAL = new CandidatoDAL();
-            candidatoDAL.Excluir(_candidato);
+            candidatoDAL.Excluir(_id);
         }
         public void Alterar(Candidato _candidato)
         {

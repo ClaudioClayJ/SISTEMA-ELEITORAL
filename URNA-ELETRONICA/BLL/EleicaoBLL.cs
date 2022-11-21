@@ -14,10 +14,10 @@ namespace BLL
             EleicaoDAL eleicaoDAL = new EleicaoDAL();
             eleicaoDAL.Inserir(_eleicao);
         }
-        public void Excluir(Eleicao _eleicao)
+        public void Excluir(int _id)
         {
             EleicaoDAL eleicaoDAL = new EleicaoDAL();
-            eleicaoDAL.Excluir(_eleicao);
+            eleicaoDAL.Excluir(_id);
         }
         public void Alterar(Eleicao _eleicao)
         {

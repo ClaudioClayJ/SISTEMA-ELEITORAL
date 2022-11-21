@@ -34,14 +34,14 @@ namespace DAL
             }
         }
 
-        public void Excluir(int _numero)
+        public void Excluir(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             SqlCommand cmd = cn.CreateCommand();
             try
             {
-                cmd.CommandText = "DELETE FROM Candidato WHERE Numero = @Numero";
-                cmd.Parameters.AddWithValue("@Numero", _numero);
+                cmd.CommandText = "DELETE FROM Candidato WHERE Id = @Id";
+                cmd.Parameters.AddWithValue("@Id", _id);
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
             }
