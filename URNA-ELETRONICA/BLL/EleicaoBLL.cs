@@ -37,6 +37,10 @@ namespace BLL
             return eleicaoDAL.BuscarPorTurno(_turno);
         }
 
-       
+        public object BuscarTodos()
+        {
+            EleicaoDAL eleicaoDAL = new EleicaoDAL();
+            return eleicaoDAL.BuscarPorTodos();
+        }
     }
 }

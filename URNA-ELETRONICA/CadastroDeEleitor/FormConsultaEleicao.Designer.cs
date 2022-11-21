@@ -45,6 +45,7 @@
             this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
+            this.radioButtonTodos = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleicao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -124,7 +125,7 @@
             // 
             this.radioButtonAno.AutoSize = true;
             this.radioButtonAno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonAno.Location = new System.Drawing.Point(14, 109);
+            this.radioButtonAno.Location = new System.Drawing.Point(14, 81);
             this.radioButtonAno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonAno.Name = "radioButtonAno";
             this.radioButtonAno.Size = new System.Drawing.Size(108, 32);
@@ -137,7 +138,7 @@
             // 
             this.radioButtonTurno.AutoSize = true;
             this.radioButtonTurno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonTurno.Location = new System.Drawing.Point(14, 159);
+            this.radioButtonTurno.Location = new System.Drawing.Point(14, 130);
             this.radioButtonTurno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonTurno.Name = "radioButtonTurno";
             this.radioButtonTurno.Size = new System.Drawing.Size(125, 32);
@@ -221,11 +222,24 @@
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
+            // radioButtonTodos
+            // 
+            this.radioButtonTodos.AutoSize = true;
+            this.radioButtonTodos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonTodos.Location = new System.Drawing.Point(12, 186);
+            this.radioButtonTodos.Name = "radioButtonTodos";
+            this.radioButtonTodos.Size = new System.Drawing.Size(125, 32);
+            this.radioButtonTodos.TabIndex = 15;
+            this.radioButtonTodos.TabStop = true;
+            this.radioButtonTodos.Text = "Por Todos";
+            this.radioButtonTodos.UseVisualStyleBackColor = true;
+            // 
             // FormConsultaEleicao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 604);
+            this.Controls.Add(this.radioButtonTodos);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonInserir);
@@ -267,5 +281,6 @@
         private DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
         private Button buttonAlterar;
+        private RadioButton radioButtonTodos;
     }
 }

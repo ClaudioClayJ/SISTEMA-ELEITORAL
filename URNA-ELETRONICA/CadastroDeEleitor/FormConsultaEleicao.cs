@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using MODELS;
 using System;
 using System.Collections.Generic;
@@ -30,11 +31,16 @@ namespace UiTerminalWindows
             {
                 bindingSourceEleicao.DataSource = eleicaoBLL.BuscarPorTurno(Convert.ToInt32(textBoxTurno.Text));
             }
+            else if (radioButtonTodos.Checked)
+            {
+                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarTodos();
+            }
         }
 
         private void FormConsultaEleicao_Load(object sender, EventArgs e)
         {
             EleicaoBLL eleicaoBLL = new EleicaoBLL();
+            bindingSourceEleicao.DataSource = eleicaoBLL.BuscarTodos();
         }
 
         private void buttonInserir_Click(object sender, EventArgs e)

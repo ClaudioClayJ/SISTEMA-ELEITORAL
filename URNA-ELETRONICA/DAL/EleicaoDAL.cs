@@ -117,5 +117,28 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        public DataTable BuscarPorTodos()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao ";
+                da.SelectCommand.CommandType = CommandType.Text;
+
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
