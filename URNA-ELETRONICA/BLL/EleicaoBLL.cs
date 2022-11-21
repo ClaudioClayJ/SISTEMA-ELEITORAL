@@ -25,10 +25,18 @@ namespace BLL
             EleicaoDAL eleicaoDAL = new EleicaoDAL();
             eleicaoDAL.Alterar(_eleicao);
         }
-        public DataTable BuscarPorEleicao(int _ano)
+        public DataTable BuscarPorAno(int _ano)
         {
             EleicaoDAL eleicaoDAL = new EleicaoDAL();
-            return eleicaoDAL.BuscarPorEleicao(_ano);
+            return eleicaoDAL.BuscarPorAno(_ano);
         }
+
+        public DataTable BuscarPorTurno(int _turno)
+        {
+            EleicaoDAL eleicaoDAL = new EleicaoDAL();
+            return eleicaoDAL.BuscarPorTurno(_turno);
+        }
+
+       
     }
 }

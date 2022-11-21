@@ -47,7 +47,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 41);
+            this.label1.Size = new System.Drawing.Size(239, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro Candidato";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -55,9 +55,9 @@
             // LabelNome
             // 
             this.LabelNome.AutoSize = true;
-            this.LabelNome.Location = new System.Drawing.Point(3, 57);
+            this.LabelNome.Location = new System.Drawing.Point(3, 43);
             this.LabelNome.Name = "LabelNome";
-            this.LabelNome.Size = new System.Drawing.Size(50, 20);
+            this.LabelNome.Size = new System.Drawing.Size(40, 15);
             this.LabelNome.TabIndex = 1;
             this.LabelNome.Text = "Nome";
             this.LabelNome.Click += new System.EventHandler(this.LabelNome_Click);
@@ -65,9 +65,9 @@
             // LabelNumero
             // 
             this.LabelNumero.AutoSize = true;
-            this.LabelNumero.Location = new System.Drawing.Point(3, 142);
+            this.LabelNumero.Location = new System.Drawing.Point(3, 106);
             this.LabelNumero.Name = "LabelNumero";
-            this.LabelNumero.Size = new System.Drawing.Size(63, 20);
+            this.LabelNumero.Size = new System.Drawing.Size(51, 15);
             this.LabelNumero.TabIndex = 2;
             this.LabelNumero.Text = "Numero";
             this.LabelNumero.Click += new System.EventHandler(this.label2_Click);
@@ -75,9 +75,10 @@
             // textBoxNome
             // 
             this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCandidato, "Nome", true));
-            this.textBoxNome.Location = new System.Drawing.Point(3, 88);
+            this.textBoxNome.Location = new System.Drawing.Point(3, 66);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(317, 27);
+            this.textBoxNome.Size = new System.Drawing.Size(278, 23);
             this.textBoxNome.TabIndex = 3;
             // 
             // bindingSourceCandidato
@@ -88,16 +89,18 @@
             // textBoxNumero
             // 
             this.textBoxNumero.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCandidato, "Numero", true));
-            this.textBoxNumero.Location = new System.Drawing.Point(3, 189);
+            this.textBoxNumero.Location = new System.Drawing.Point(3, 142);
+            this.textBoxNumero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNumero.Name = "textBoxNumero";
-            this.textBoxNumero.Size = new System.Drawing.Size(317, 27);
+            this.textBoxNumero.Size = new System.Drawing.Size(278, 23);
             this.textBoxNumero.TabIndex = 4;
             // 
             // buttonSalvarCandidato
             // 
-            this.buttonSalvarCandidato.Location = new System.Drawing.Point(494, 409);
+            this.buttonSalvarCandidato.Location = new System.Drawing.Point(432, 307);
+            this.buttonSalvarCandidato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvarCandidato.Name = "buttonSalvarCandidato";
-            this.buttonSalvarCandidato.Size = new System.Drawing.Size(94, 29);
+            this.buttonSalvarCandidato.Size = new System.Drawing.Size(82, 22);
             this.buttonSalvarCandidato.TabIndex = 7;
             this.buttonSalvarCandidato.Text = "Salvar";
             this.buttonSalvarCandidato.UseVisualStyleBackColor = true;
@@ -105,9 +108,10 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(685, 409);
+            this.buttonCancelar.Location = new System.Drawing.Point(599, 307);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
+            this.buttonCancelar.Size = new System.Drawing.Size(82, 22);
             this.buttonCancelar.TabIndex = 8;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -115,9 +119,9 @@
             // 
             // FormCadastroCandidato
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1324, 559);
+            this.ClientSize = new System.Drawing.Size(1158, 419);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvarCandidato);
             this.Controls.Add(this.textBoxNumero);
@@ -125,8 +129,9 @@
             this.Controls.Add(this.LabelNumero);
             this.Controls.Add(this.LabelNome);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCadastroCandidato";
-            this.Text = "FormCadastroCandidato";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.FormCadastroCandidato_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCandidato)).EndInit();
             this.ResumeLayout(false);

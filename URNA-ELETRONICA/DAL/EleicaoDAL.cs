@@ -73,7 +73,7 @@ namespace DAL
 
             }
         }
-        public DataTable BuscarPorEleicao(int _id)
+        public DataTable BuscarPorAno(int _ano)
         {
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable dt = new DataTable();
@@ -82,9 +82,32 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Id = @Id";
+                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Ano = @Ano";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("Eleicao", _id);
+                da.SelectCommand.Parameters.AddWithValue("Eleicao", _ano);
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            
+        }
+
+        public DataTable BuscarPorTurno(int _turno)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Turno = @Turno";
+                da.SelectCommand.CommandType = CommandType.Text;
+                da.SelectCommand.Parameters.AddWithValue("Eleicao", _turno);
                 cn.Open();
                 da.Fill(dt);
                 return dt;

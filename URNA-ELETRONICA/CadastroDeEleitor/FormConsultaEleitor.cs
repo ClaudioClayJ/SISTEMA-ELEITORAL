@@ -26,14 +26,21 @@ namespace UiTerminalWindows
 
         private void FormConsultaEleitor_Load(object sender, EventArgs e)
         {
-            EleitorBLL eleitor = new EleitorBLL();
-            bindingSourceEleitor.DataSource = eleitor.BuscarPorTitulo("");
+            EleitorBLL eleitorBLL = new EleitorBLL();
+            bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorTitulo("");
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            EleitorBLL eleitor = new EleitorBLL();
-            bindingSourceEleitor.DataSource = eleitor.BuscarPorTitulo(textBoxBuscar.Text);
+            EleitorBLL eleitorBLL = new EleitorBLL();
+            if(radioButtonTitulo.Checked)
+            {
+            bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorTitulo(textBoxBuscar.Text);
+            }
+            else if(radioButtonNome.Checked)
+            {
+             bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorNome(textBoxBuscar.Text);
+            }
         }
 
         private void buttonInserir_Click(object sender, EventArgs e)
