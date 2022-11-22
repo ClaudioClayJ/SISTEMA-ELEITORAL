@@ -40,7 +40,7 @@ namespace DAL
             SqlCommand cmd = cn.CreateCommand();
             try
             {
-                cmd.CommandText = "DELETE FROM Eleitor WHERE Id = @Id";
+                cmd.CommandText = "DELETE FROM Eleicao WHERE Id = @Id";
                 cmd.Parameters.AddWithValue("@Id", _id);
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -58,7 +58,7 @@ namespace DAL
             try
             {
 
-                cmd.CommandText = "UPDADE Eleicao SET Ano = @Ano, Turno= @Turno WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Eleicao SET Ano = @Ano, Turno = @Turno WHERE Id = @Id";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Ano", _eleicao.Ano);
                 cmd.Parameters.AddWithValue("@Turno", _eleicao.Turno);
@@ -82,9 +82,9 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Ano = @Ano";
+                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Ano LIKE @Ano";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("Ano", _ano);
+                da.SelectCommand.Parameters.AddWithValue("Ano", "%" + _ano + "%");
                 cn.Open();
                 da.Fill(dt);
                 return dt;
@@ -105,9 +105,9 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Turno = @Turno";
+                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Turno LIKE @Turno";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("Turno", _turno);
+                da.SelectCommand.Parameters.AddWithValue("Turno","%" + _turno + "%");
                 cn.Open();
                 da.Fill(dt);
                 return dt;
@@ -131,6 +131,28 @@ namespace DAL
                 da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao ";
                 da.SelectCommand.CommandType = CommandType.Text;
 
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public object BuscarPorId(int _id)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Ano , Turno FROM Eleicao WHERE Id = @Id";
+                da.SelectCommand.CommandType = CommandType.Text;
+                da.SelectCommand.Parameters.AddWithValue("Id", _id);
                 cn.Open();
                 da.Fill(dt);
                 return dt;

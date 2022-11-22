@@ -100,9 +100,9 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Numero FROM Candidato WHERE Numero = @Numero";
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Numero FROM Candidato WHERE Numero LIKE @Numero";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("@Numero", _numero);
+                da.SelectCommand.Parameters.AddWithValue("@Numero","%" + _numero + "%");
                 cn.Open();
                 da.Fill(dt);
                 return dt;
@@ -148,9 +148,9 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Numero FROM Candidato WHERE Nome = @Nome";
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Numero FROM Candidato WHERE Nome LIKE @Nome";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("@Nome", _nome);
+                da.SelectCommand.Parameters.AddWithValue("@Nome","%" + _nome + "%");
                 cn.Open();
                 da.Fill(dt);
                 return dt;

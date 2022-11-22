@@ -23,9 +23,17 @@ namespace UiTerminalWindows
 
         private void FormCadastroEleicao_Load(object sender, EventArgs e)
         {
-            Eleicao eleicao = new Eleicao();
-            bindingSourceEleicao.DataSource = eleicao;
-            bindingSourceEleicao.AddNew();
+            if (id == 0)
+            {
+                Eleicao eleicao = new Eleicao();
+                bindingSourceEleicao.DataSource = eleicao;
+                bindingSourceEleicao.AddNew();
+            }
+            else
+            {
+                EleicaoBLL eleicaoBLL = new EleicaoBLL();
+                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarPorId(id);
+            }
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)

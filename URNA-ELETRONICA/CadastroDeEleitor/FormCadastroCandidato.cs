@@ -15,7 +15,7 @@ namespace UiTerminalWindows
     public partial class FormCadastroCandidato : Form
     {
         private int id;
-        public FormCadastroCandidato(int _id=0)
+        public FormCadastroCandidato(int _id = 0)
         {
             InitializeComponent();
             id = _id; 

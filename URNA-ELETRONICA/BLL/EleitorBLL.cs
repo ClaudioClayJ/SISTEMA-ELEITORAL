@@ -2,6 +2,7 @@
 using DAL;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace BLL
 {
@@ -51,6 +52,12 @@ namespace BLL
         {
             EleitorDAL eleitorDAL = new EleitorDAL();
             return eleitorDAL.BuscarPorId(_id);
+        }
+
+        public DataTable BuscarTodos()
+        {
+            EleitorDAL eleitorDAL = new EleitorDAL();
+            return eleitorDAL.BuscarTodos();
         }
     }
 }

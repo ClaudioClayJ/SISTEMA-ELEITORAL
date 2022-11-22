@@ -116,9 +116,9 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo as tituloEleitor, Votou FROM Eleitor WHERE Nome = @Nome" ;
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo as tituloEleitor, Votou FROM Eleitor WHERE Nome LIKE @Nome" ;
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("@Nome", _nome);
+                da.SelectCommand.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
                 da.Fill(dt);
                 return dt;
@@ -141,6 +141,27 @@ namespace DAL
                 da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo as tituloEleitor, Votou FROM Eleitor WHERE Id = @Id";
                 da.SelectCommand.CommandType = CommandType.Text;
                 da.SelectCommand.Parameters.AddWithValue("@Id", _id);
+                cn.Open();
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public DataTable BuscarTodos()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                da.SelectCommand = cn.CreateCommand();
+                da.SelectCommand.CommandText = "SELECT  Id ,Nome , Titulo as tituloEleitor, Votou FROM Eleitor";
+                da.SelectCommand.CommandType = CommandType.Text;
                 cn.Open();
                 da.Fill(dt);
                 return dt;

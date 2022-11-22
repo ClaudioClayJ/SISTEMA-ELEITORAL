@@ -27,7 +27,7 @@ namespace UiTerminalWindows
         private void FormConsultaEleitor_Load(object sender, EventArgs e)
         {
             EleitorBLL eleitorBLL = new EleitorBLL();
-            bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorTitulo("");
+            bindingSourceEleitor.DataSource = eleitorBLL.BuscarTodos();
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -35,17 +35,21 @@ namespace UiTerminalWindows
             EleitorBLL eleitorBLL = new EleitorBLL();
             if(radioButtonTitulo.Checked)
             {
-            bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorTitulo(textBoxBuscar.Text);
+            bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorTitulo(textBoxTitulo.Text);
             }
             else if(radioButtonNome.Checked)
             {
-             bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorNome(textBoxBuscar.Text);
+             bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorNome(textBoxNome.Text);
+            }
+            else if (radioButtonTodos.Checked)
+            {
+                bindingSourceEleitor.DataSource = eleitorBLL.BuscarTodos();
             }
         }
 
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            using (FormCadastroEleitor frm = new FormCadastroEleitor(2))
+            using (FormCadastroEleitor frm = new FormCadastroEleitor())
             {
                 frm.ShowDialog();
             }
@@ -75,6 +79,11 @@ namespace UiTerminalWindows
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void radioButtonTodos_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

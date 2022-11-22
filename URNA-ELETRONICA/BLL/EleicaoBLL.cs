@@ -42,5 +42,11 @@ namespace BLL
             EleicaoDAL eleicaoDAL = new EleicaoDAL();
             return eleicaoDAL.BuscarPorTodos();
         }
+
+        public object BuscarPorId(int _id)
+        {
+            EleicaoDAL eleicaoDAL = new EleicaoDAL();
+            return eleicaoDAL.BuscarPorId(_id);
+        }
     }
 }

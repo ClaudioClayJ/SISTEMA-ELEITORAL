@@ -20,6 +20,21 @@ namespace UiTerminalWindows
             InitializeComponent();
             id = _id;
         }
+        private void FormCadastroEleitor_Load(object sender, EventArgs e)
+        {
+            if (id == 0)
+            {
+                Eleitor eleitor = new Eleitor();
+                bindingSourceEleitor.DataSource = eleitor;
+                bindingSourceEleitor.AddNew();
+            }
+            else
+            {
+                EleitorBLL eleitorBLL = new EleitorBLL();
+                bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorId(id);
+            }
+           
+        }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
@@ -54,21 +69,6 @@ namespace UiTerminalWindows
             Close();
         }
 
-        private void FormCadastroEleitor_Load(object sender, EventArgs e)
-        {
-            if (id == 0)
-            {
-            Eleitor eleitor = new Eleitor();
-                bindingSourceEleitor.DataSource = eleitor;
-                bindingSourceEleitor.AddNew();
-            }
-            else
-            {
-                EleitorBLL eleitorBLL = new EleitorBLL();
-                bindingSourceEleitor.DataSource = eleitorBLL.BuscarPorId(id);
-            }
-            
-        }
 
         
     }

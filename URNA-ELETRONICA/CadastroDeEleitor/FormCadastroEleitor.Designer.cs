@@ -36,11 +36,9 @@
             this.labelTitulo = new System.Windows.Forms.Label();
             this.textBoxTitulo = new System.Windows.Forms.TextBox();
             this.checkBoxVotou = new System.Windows.Forms.CheckBox();
-            this.eleitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleitor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eleitorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelEleitorCandidato
@@ -96,21 +94,16 @@
             // checkBoxVotou
             // 
             this.checkBoxVotou.AutoSize = true;
-            this.checkBoxVotou.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.eleitorBindingSource, "Votou", true));
-            this.checkBoxVotou.Location = new System.Drawing.Point(515, 162);
+            this.checkBoxVotou.Location = new System.Drawing.Point(455, 159);
             this.checkBoxVotou.Name = "checkBoxVotou";
             this.checkBoxVotou.Size = new System.Drawing.Size(87, 24);
             this.checkBoxVotou.TabIndex = 5;
             this.checkBoxVotou.Text = "Já Votou";
             this.checkBoxVotou.UseVisualStyleBackColor = true;
             // 
-            // eleitorBindingSource
-            // 
-            this.eleitorBindingSource.DataSource = typeof(MODELS.Eleitor);
-            // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(131, 400);
+            this.buttonSalvar.Location = new System.Drawing.Point(60, 318);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
             this.buttonSalvar.TabIndex = 6;
@@ -120,7 +113,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(300, 400);
+            this.buttonCancelar.Location = new System.Drawing.Point(232, 318);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 7;
@@ -145,7 +138,6 @@
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.FormCadastroEleitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleitor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eleitorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +154,6 @@
         private Button buttonSalvar;
         private Button buttonCancelar;
         private BindingSource bindingSourceEleitor;
-        private BindingSource eleitorBindingSource;
-        private Button buttonAlterar;
+        //private Button buttonAlterar;
     }
 }
