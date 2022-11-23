@@ -40,5 +40,13 @@ namespace UiTerminalWindows
                 frm.ShowDialog();
             }
         }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormSobre frm = new FormSobre()) 
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

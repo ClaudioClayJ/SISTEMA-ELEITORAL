@@ -68,9 +68,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(11, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(443, 38);
+            this.label2.Size = new System.Drawing.Size(388, 38);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Informe o numero do Candidato";
+            this.label2.Text = "Informe os dados Candidato";
             // 
             // textBoxNumero
             // 
