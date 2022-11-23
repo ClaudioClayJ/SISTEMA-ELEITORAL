@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.bindingSourceCandidato = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxNumero = new System.Windows.Forms.TextBox();
+            this.bindingSourceCandidato = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonInserir = new System.Windows.Forms.Button();
@@ -62,10 +62,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Consulta de Candidato";
             // 
-            // bindingSourceCandidato
-            // 
-            this.bindingSourceCandidato.DataSource = typeof(MODELS.Candidato);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -78,16 +74,21 @@
             // 
             // textBoxNumero
             // 
-            this.textBoxNumero.Location = new System.Drawing.Point(11, 300);
+            this.textBoxNumero.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCandidato, "Numero", true));
+            this.textBoxNumero.Location = new System.Drawing.Point(409, 163);
             this.textBoxNumero.Name = "textBoxNumero";
             this.textBoxNumero.Size = new System.Drawing.Size(355, 27);
             this.textBoxNumero.TabIndex = 2;
+            // 
+            // bindingSourceCandidato
+            // 
+            this.bindingSourceCandidato.DataSource = typeof(MODELS.Candidato);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(11, 261);
+            this.label3.Location = new System.Drawing.Point(409, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 20);
             this.label3.TabIndex = 3;
@@ -95,7 +96,7 @@
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(11, 385);
+            this.buttonBuscar.Location = new System.Drawing.Point(806, 225);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(123, 30);
             this.buttonBuscar.TabIndex = 4;
@@ -105,7 +106,7 @@
             // 
             // buttonInserir
             // 
-            this.buttonInserir.Location = new System.Drawing.Point(11, 442);
+            this.buttonInserir.Location = new System.Drawing.Point(806, 157);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(123, 33);
             this.buttonInserir.TabIndex = 5;
@@ -125,6 +126,7 @@
             // 
             // textBoxNome
             // 
+            this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCandidato, "Nome", true));
             this.textBoxNome.Location = new System.Drawing.Point(11, 163);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(355, 27);
@@ -132,7 +134,7 @@
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Location = new System.Drawing.Point(11, 546);
+            this.buttonExcluir.Location = new System.Drawing.Point(988, 225);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(123, 31);
             this.buttonExcluir.TabIndex = 8;
@@ -152,12 +154,12 @@
             this.nomeDataGridViewTextBoxColumn,
             this.numeroDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bindingSourceCandidato;
-            this.dataGridView1.Location = new System.Drawing.Point(392, 129);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 209);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(765, 495);
+            this.dataGridView1.Size = new System.Drawing.Size(731, 415);
             this.dataGridView1.TabIndex = 9;
             // 
             // idDataGridViewTextBoxColumn
@@ -190,7 +192,7 @@
             // radioButtonNome
             // 
             this.radioButtonNome.AutoSize = true;
-            this.radioButtonNome.Location = new System.Drawing.Point(993, 12);
+            this.radioButtonNome.Location = new System.Drawing.Point(911, 96);
             this.radioButtonNome.Name = "radioButtonNome";
             this.radioButtonNome.Size = new System.Drawing.Size(96, 24);
             this.radioButtonNome.TabIndex = 10;
@@ -201,7 +203,7 @@
             // radioButtonNumero
             // 
             this.radioButtonNumero.AutoSize = true;
-            this.radioButtonNumero.Location = new System.Drawing.Point(993, 53);
+            this.radioButtonNumero.Location = new System.Drawing.Point(1037, 96);
             this.radioButtonNumero.Name = "radioButtonNumero";
             this.radioButtonNumero.Size = new System.Drawing.Size(109, 24);
             this.radioButtonNumero.TabIndex = 11;
@@ -212,7 +214,7 @@
             // radioButtonTodos
             // 
             this.radioButtonTodos.AutoSize = true;
-            this.radioButtonTodos.Location = new System.Drawing.Point(993, 99);
+            this.radioButtonTodos.Location = new System.Drawing.Point(806, 96);
             this.radioButtonTodos.Name = "radioButtonTodos";
             this.radioButtonTodos.Size = new System.Drawing.Size(70, 24);
             this.radioButtonTodos.TabIndex = 12;
@@ -222,9 +224,9 @@
             // 
             // buttonAlterar
             // 
-            this.buttonAlterar.Location = new System.Drawing.Point(11, 503);
+            this.buttonAlterar.Location = new System.Drawing.Point(988, 157);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(123, 26);
+            this.buttonAlterar.Size = new System.Drawing.Size(123, 33);
             this.buttonAlterar.TabIndex = 14;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
@@ -262,7 +264,6 @@
         #endregion
 
         private Label label1;
-        private BindingSource bindingSourceCandidato;
         private Label label2;
         private TextBox textBoxNumero;
         private Label label3;
@@ -272,12 +273,13 @@
         private TextBox textBoxNome;
         private Button buttonExcluir;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private RadioButton radioButtonNome;
         private RadioButton radioButtonNumero;
         private RadioButton radioButtonTodos;
         private Button buttonAlterar;
+        private BindingSource bindingSourceCandidato;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
     }
 }

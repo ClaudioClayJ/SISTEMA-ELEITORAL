@@ -79,7 +79,7 @@
             // 
             // bindingSourceCandidato
             // 
-            this.bindingSourceCandidato.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            this.bindingSourceCandidato.DataSource = typeof(MODELS.Candidato);
             // 
             // textBoxNumero
             // 
