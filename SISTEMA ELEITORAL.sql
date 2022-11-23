@@ -1,6 +1,9 @@
 USE MASTER 
+-USE MASTER 
 
 DROP DATABASE URNA
+select*from Eleitor
+select*from Candidato
 
 CREATE DATABASE URNA
 
@@ -34,5 +37,3 @@ INSERT INTO Candidato(Numero, Nome) VALUES (6,'JOSE')
  select * from Eleitor
  select * from Candidato
  select * from Eleicao
-
- SELECT * Id, Nome, Titulo, Votou
