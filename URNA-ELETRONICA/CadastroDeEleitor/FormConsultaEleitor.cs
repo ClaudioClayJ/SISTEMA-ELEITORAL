@@ -100,7 +100,6 @@ namespace UiTerminalWindows
                 radioButtonTodos.Checked = true;
                 bindingSourceEleitor.DataSource = eleitorBLL.BuscarTodos();
 
-                //testando envio//
             }
         }
     }
