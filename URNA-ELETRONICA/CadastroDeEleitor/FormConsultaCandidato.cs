@@ -28,17 +28,17 @@ namespace UiTerminalWindows
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             CandidatoBLL candidatoBLL = new CandidatoBLL();
-            if (radioButtonNumero.Checked)
-            {
-            bindingSourceCandidato.DataSource = candidatoBLL.BuscarPorNumero(Convert.ToInt32(textBoxNumero.Text));
-            }
-            else if (radioButtonTodos.Checked)
+            if (radioButtonTodos.Checked)
             {
                 bindingSourceCandidato.DataSource = candidatoBLL.BuscarTodos();
             }
-            else if(radioButtonNome.Checked)   
+            else if (radioButtonNome.Checked)
             {
                 bindingSourceCandidato.DataSource = candidatoBLL.BuscarPorNome(textBoxNome.Text);
+            }
+            else if(radioButtonNumero.Checked)   
+            {
+                bindingSourceCandidato.DataSource = candidatoBLL.BuscarPorNumero(Convert.ToInt32(textBoxNumero.Text));
             }
         }
 
