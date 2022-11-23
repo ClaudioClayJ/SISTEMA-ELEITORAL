@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxAno = new System.Windows.Forms.TextBox();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.bindingSourceEleicao = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,14 +38,12 @@
             this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radioButtonAno = new System.Windows.Forms.RadioButton();
             this.radioButtonTurno = new System.Windows.Forms.RadioButton();
-            this.labelAno = new System.Windows.Forms.Label();
-            this.labelTurno = new System.Windows.Forms.Label();
-            this.textBoxTurno = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.radioButtonTodos = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleicao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,13 +59,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar Eleiçao";
             // 
-            // textBoxAno
+            // textBoxBuscar
             // 
-            this.textBoxAno.Location = new System.Drawing.Point(14, 275);
-            this.textBoxAno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxAno.Name = "textBoxAno";
-            this.textBoxAno.Size = new System.Drawing.Size(354, 27);
-            this.textBoxAno.TabIndex = 3;
+            this.textBoxBuscar.Location = new System.Drawing.Point(12, 138);
+            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(426, 27);
+            this.textBoxBuscar.TabIndex = 3;
             // 
             // bindingSourceEleicao
             // 
@@ -85,13 +83,13 @@
             this.anoDataGridViewTextBoxColumn,
             this.turnoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bindingSourceEleicao;
-            this.dataGridView1.Location = new System.Drawing.Point(539, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 173);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(394, 429);
+            this.dataGridView1.Size = new System.Drawing.Size(574, 429);
             this.dataGridView1.TabIndex = 5;
             // 
             // idDataGridViewTextBoxColumn
@@ -124,11 +122,11 @@
             // radioButtonAno
             // 
             this.radioButtonAno.AutoSize = true;
-            this.radioButtonAno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonAno.Location = new System.Drawing.Point(14, 81);
+            this.radioButtonAno.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonAno.Location = new System.Drawing.Point(143, 87);
             this.radioButtonAno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonAno.Name = "radioButtonAno";
-            this.radioButtonAno.Size = new System.Drawing.Size(108, 32);
+            this.radioButtonAno.Size = new System.Drawing.Size(101, 29);
             this.radioButtonAno.TabIndex = 6;
             this.radioButtonAno.TabStop = true;
             this.radioButtonAno.Text = "Por Ano";
@@ -137,48 +135,20 @@
             // radioButtonTurno
             // 
             this.radioButtonTurno.AutoSize = true;
-            this.radioButtonTurno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonTurno.Location = new System.Drawing.Point(14, 130);
+            this.radioButtonTurno.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonTurno.Location = new System.Drawing.Point(272, 87);
             this.radioButtonTurno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonTurno.Name = "radioButtonTurno";
-            this.radioButtonTurno.Size = new System.Drawing.Size(125, 32);
+            this.radioButtonTurno.Size = new System.Drawing.Size(116, 29);
             this.radioButtonTurno.TabIndex = 7;
             this.radioButtonTurno.TabStop = true;
             this.radioButtonTurno.Text = "Por Turno";
             this.radioButtonTurno.UseVisualStyleBackColor = true;
             // 
-            // labelAno
-            // 
-            this.labelAno.AutoSize = true;
-            this.labelAno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAno.Location = new System.Drawing.Point(14, 243);
-            this.labelAno.Name = "labelAno";
-            this.labelAno.Size = new System.Drawing.Size(50, 28);
-            this.labelAno.TabIndex = 8;
-            this.labelAno.Text = "Ano";
-            // 
-            // labelTurno
-            // 
-            this.labelTurno.AutoSize = true;
-            this.labelTurno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTurno.Location = new System.Drawing.Point(14, 328);
-            this.labelTurno.Name = "labelTurno";
-            this.labelTurno.Size = new System.Drawing.Size(67, 28);
-            this.labelTurno.TabIndex = 9;
-            this.labelTurno.Text = "Turno";
-            // 
-            // textBoxTurno
-            // 
-            this.textBoxTurno.Location = new System.Drawing.Point(14, 372);
-            this.textBoxTurno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxTurno.Name = "textBoxTurno";
-            this.textBoxTurno.Size = new System.Drawing.Size(354, 27);
-            this.textBoxTurno.TabIndex = 10;
-            // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonBuscar.Location = new System.Drawing.Point(22, 425);
+            this.buttonBuscar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonBuscar.Location = new System.Drawing.Point(455, 121);
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(86, 44);
@@ -189,11 +159,11 @@
             // 
             // buttonInserir
             // 
-            this.buttonInserir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonInserir.Location = new System.Drawing.Point(191, 425);
+            this.buttonInserir.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonInserir.Location = new System.Drawing.Point(557, 121);
             this.buttonInserir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonInserir.Name = "buttonInserir";
-            this.buttonInserir.Size = new System.Drawing.Size(86, 44);
+            this.buttonInserir.Size = new System.Drawing.Size(86, 42);
             this.buttonInserir.TabIndex = 12;
             this.buttonInserir.Text = "Inserir";
             this.buttonInserir.UseVisualStyleBackColor = true;
@@ -201,8 +171,8 @@
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonExcluir.Location = new System.Drawing.Point(191, 516);
+            this.buttonExcluir.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonExcluir.Location = new System.Drawing.Point(659, 121);
             this.buttonExcluir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(86, 44);
@@ -213,8 +183,8 @@
             // 
             // buttonAlterar
             // 
-            this.buttonAlterar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonAlterar.Location = new System.Drawing.Point(22, 516);
+            this.buttonAlterar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAlterar.Location = new System.Drawing.Point(621, 72);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(86, 40);
             this.buttonAlterar.TabIndex = 14;
@@ -225,32 +195,41 @@
             // radioButtonTodos
             // 
             this.radioButtonTodos.AutoSize = true;
-            this.radioButtonTodos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonTodos.Location = new System.Drawing.Point(12, 186);
+            this.radioButtonTodos.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonTodos.Location = new System.Drawing.Point(12, 87);
             this.radioButtonTodos.Name = "radioButtonTodos";
-            this.radioButtonTodos.Size = new System.Drawing.Size(125, 32);
+            this.radioButtonTodos.Size = new System.Drawing.Size(116, 29);
             this.radioButtonTodos.TabIndex = 15;
             this.radioButtonTodos.TabStop = true;
             this.radioButtonTodos.Text = "Por Todos";
             this.radioButtonTodos.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(480, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 31);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Atualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormConsultaEleicao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 604);
+            this.ClientSize = new System.Drawing.Size(770, 614);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButtonTodos);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonInserir);
             this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.textBoxTurno);
-            this.Controls.Add(this.labelTurno);
-            this.Controls.Add(this.labelAno);
             this.Controls.Add(this.radioButtonTurno);
             this.Controls.Add(this.radioButtonAno);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBoxAno);
+            this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormConsultaEleicao";
@@ -266,14 +245,11 @@
         #endregion
 
         private Label label1;
-        private TextBox textBoxAno;
+        private TextBox textBoxBuscar;
         private BindingSource bindingSourceEleicao;
         private DataGridView dataGridView1;
         private RadioButton radioButtonAno;
         private RadioButton radioButtonTurno;
-        private Label labelAno;
-        private Label labelTurno;
-        private TextBox textBoxTurno;
         private Button buttonBuscar;
         private Button buttonInserir;
         private Button buttonExcluir;
@@ -282,5 +258,6 @@
         private DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
         private Button buttonAlterar;
         private RadioButton radioButtonTodos;
+        private Button button1;
     }
 }

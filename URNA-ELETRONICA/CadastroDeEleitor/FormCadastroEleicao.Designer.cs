@@ -63,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(427, 108);
+            this.label3.Location = new System.Drawing.Point(8, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 20);
             this.label3.TabIndex = 2;
@@ -74,7 +74,7 @@
             this.textBoxAno.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceEleicao, "Ano", true));
             this.textBoxAno.Location = new System.Drawing.Point(8, 147);
             this.textBoxAno.Name = "textBoxAno";
-            this.textBoxAno.Size = new System.Drawing.Size(303, 27);
+            this.textBoxAno.Size = new System.Drawing.Size(345, 27);
             this.textBoxAno.TabIndex = 3;
             // 
             // bindingSourceEleicao
@@ -84,14 +84,14 @@
             // textBoxTurno
             // 
             this.textBoxTurno.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceEleicao, "Turno", true));
-            this.textBoxTurno.Location = new System.Drawing.Point(427, 147);
+            this.textBoxTurno.Location = new System.Drawing.Point(8, 249);
             this.textBoxTurno.Name = "textBoxTurno";
             this.textBoxTurno.Size = new System.Drawing.Size(345, 27);
             this.textBoxTurno.TabIndex = 4;
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(435, 355);
+            this.buttonSalvar.Location = new System.Drawing.Point(82, 323);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
             this.buttonSalvar.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(621, 355);
+            this.buttonCancelar.Location = new System.Drawing.Point(271, 323);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 6;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.ClientSize = new System.Drawing.Size(455, 451);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.textBoxTurno);

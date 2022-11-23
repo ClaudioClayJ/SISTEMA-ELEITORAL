@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using MODELS;
 using System;
 using System.Collections.Generic;
@@ -28,17 +29,22 @@ namespace UiTerminalWindows
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             CandidatoBLL candidatoBLL = new CandidatoBLL();
+            if (textBoxBuscar.Text == "")
+            {
+                radioButtonTodos.Checked = true;
+                bindingSourceCandidato.DataSource = candidatoBLL.BuscarTodos();
+            }
             if (radioButtonTodos.Checked)
             {
                 bindingSourceCandidato.DataSource = candidatoBLL.BuscarTodos();
             }
             else if (radioButtonNome.Checked)
             {
-                bindingSourceCandidato.DataSource = candidatoBLL.BuscarPorNome(textBoxNome.Text);
+                bindingSourceCandidato.DataSource = candidatoBLL.BuscarPorNome(textBoxBuscar.Text);
             }
             else if(radioButtonNumero.Checked)   
             {
-                bindingSourceCandidato.DataSource = candidatoBLL.BuscarPorNumero(Convert.ToInt32(textBoxNumero.Text));
+                bindingSourceCandidato.DataSource = candidatoBLL.BuscarPorNumero(Convert.ToInt32(textBoxBuscar.Text));
             }
         }
 
@@ -67,6 +73,16 @@ namespace UiTerminalWindows
             using (FormCadastroCandidato frm = new FormCadastroCandidato(Convert.ToInt32(((DataRowView)bindingSourceCandidato.Current).Row["Id"])))
             {
                 frm.ShowDialog();
+            }
+        }
+
+        private void buttonAtualizar_Click(object sender, EventArgs e)
+        {
+            CandidatoBLL candidatoBLL = new CandidatoBLL();
+            if (textBoxBuscar.Text == "")
+            {
+                radioButtonTodos.Checked = true;
+                bindingSourceCandidato.DataSource = candidatoBLL.BuscarTodos();
             }
         }
     }

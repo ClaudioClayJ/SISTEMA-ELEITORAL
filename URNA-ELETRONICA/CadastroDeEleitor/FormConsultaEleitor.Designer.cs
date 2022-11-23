@@ -30,16 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.bindingSourceEleitor = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonInserir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.radioButtonNome = new System.Windows.Forms.RadioButton();
             this.radioButtonTitulo = new System.Windows.Forms.RadioButton();
-            this.textBoxTitulo = new System.Windows.Forms.TextBox();
-            this.label1Nome = new System.Windows.Forms.Label();
-            this.labelTituko = new System.Windows.Forms.Label();
             this.labelAlterar = new System.Windows.Forms.Label();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.radioButtonTodos = new System.Windows.Forms.RadioButton();
@@ -48,6 +45,7 @@
             this.tituloEleitorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.votouDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAtualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleitor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -56,16 +54,17 @@
             // 
             this.bindingSourceEleitor.DataSource = typeof(MODELS.Eleitor);
             // 
-            // textBoxNome
+            // textBoxBuscar
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(75, 112);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(381, 27);
-            this.textBoxNome.TabIndex = 2;
+            this.textBoxBuscar.Location = new System.Drawing.Point(12, 112);
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(476, 27);
+            this.textBoxBuscar.TabIndex = 2;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(826, 109);
+            this.buttonBuscar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonBuscar.Location = new System.Drawing.Point(545, 107);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscar.TabIndex = 3;
@@ -75,7 +74,8 @@
             // 
             // buttonInserir
             // 
-            this.buttonInserir.Location = new System.Drawing.Point(935, 109);
+            this.buttonInserir.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonInserir.Location = new System.Drawing.Point(545, 55);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(94, 29);
             this.buttonInserir.TabIndex = 4;
@@ -86,8 +86,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(477, 11);
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(210, 41);
             this.label2.TabIndex = 5;
@@ -95,7 +96,8 @@
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Location = new System.Drawing.Point(935, 169);
+            this.buttonExcluir.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonExcluir.Location = new System.Drawing.Point(686, 109);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
             this.buttonExcluir.TabIndex = 6;
@@ -106,10 +108,11 @@
             // radioButtonNome
             // 
             this.radioButtonNome.AutoSize = true;
-            this.radioButtonNome.Location = new System.Drawing.Point(75, 11);
+            this.radioButtonNome.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonNome.Location = new System.Drawing.Point(106, 69);
             this.radioButtonNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonNome.Name = "radioButtonNome";
-            this.radioButtonNome.Size = new System.Drawing.Size(96, 24);
+            this.radioButtonNome.Size = new System.Drawing.Size(117, 29);
             this.radioButtonNome.TabIndex = 7;
             this.radioButtonNome.TabStop = true;
             this.radioButtonNome.Text = "Por Nome";
@@ -118,40 +121,15 @@
             // radioButtonTitulo
             // 
             this.radioButtonTitulo.AutoSize = true;
-            this.radioButtonTitulo.Location = new System.Drawing.Point(75, 43);
+            this.radioButtonTitulo.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonTitulo.Location = new System.Drawing.Point(229, 69);
             this.radioButtonTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonTitulo.Name = "radioButtonTitulo";
-            this.radioButtonTitulo.Size = new System.Drawing.Size(93, 24);
+            this.radioButtonTitulo.Size = new System.Drawing.Size(116, 29);
             this.radioButtonTitulo.TabIndex = 8;
             this.radioButtonTitulo.TabStop = true;
             this.radioButtonTitulo.Text = "Por Titulo";
             this.radioButtonTitulo.UseVisualStyleBackColor = true;
-            // 
-            // textBoxTitulo
-            // 
-            this.textBoxTitulo.Location = new System.Drawing.Point(477, 112);
-            this.textBoxTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxTitulo.Name = "textBoxTitulo";
-            this.textBoxTitulo.Size = new System.Drawing.Size(332, 27);
-            this.textBoxTitulo.TabIndex = 9;
-            // 
-            // label1Nome
-            // 
-            this.label1Nome.AutoSize = true;
-            this.label1Nome.Location = new System.Drawing.Point(237, 89);
-            this.label1Nome.Name = "label1Nome";
-            this.label1Nome.Size = new System.Drawing.Size(50, 20);
-            this.label1Nome.TabIndex = 10;
-            this.label1Nome.Text = "Nome";
-            // 
-            // labelTituko
-            // 
-            this.labelTituko.AutoSize = true;
-            this.labelTituko.Location = new System.Drawing.Point(630, 88);
-            this.labelTituko.Name = "labelTituko";
-            this.labelTituko.Size = new System.Drawing.Size(47, 20);
-            this.labelTituko.TabIndex = 11;
-            this.labelTituko.Text = "Titulo";
             // 
             // labelAlterar
             // 
@@ -164,7 +142,8 @@
             // 
             // buttonAlterar
             // 
-            this.buttonAlterar.Location = new System.Drawing.Point(826, 169);
+            this.buttonAlterar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAlterar.Location = new System.Drawing.Point(686, 55);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
             this.buttonAlterar.TabIndex = 13;
@@ -175,9 +154,10 @@
             // radioButtonTodos
             // 
             this.radioButtonTodos.AutoSize = true;
-            this.radioButtonTodos.Location = new System.Drawing.Point(75, 74);
+            this.radioButtonTodos.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonTodos.Location = new System.Drawing.Point(12, 69);
             this.radioButtonTodos.Name = "radioButtonTodos";
-            this.radioButtonTodos.Size = new System.Drawing.Size(70, 24);
+            this.radioButtonTodos.Size = new System.Drawing.Size(83, 29);
             this.radioButtonTodos.TabIndex = 14;
             this.radioButtonTodos.TabStop = true;
             this.radioButtonTodos.Text = "Todos";
@@ -241,25 +221,34 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
+            // buttonAtualizar
+            // 
+            this.buttonAtualizar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonAtualizar.Location = new System.Drawing.Point(409, 65);
+            this.buttonAtualizar.Name = "buttonAtualizar";
+            this.buttonAtualizar.Size = new System.Drawing.Size(104, 37);
+            this.buttonAtualizar.TabIndex = 16;
+            this.buttonAtualizar.Text = "Atualizar";
+            this.buttonAtualizar.UseVisualStyleBackColor = true;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
+            // 
             // FormConsultaEleitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 691);
+            this.ClientSize = new System.Drawing.Size(814, 583);
+            this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.radioButtonTodos);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.labelAlterar);
-            this.Controls.Add(this.labelTituko);
-            this.Controls.Add(this.label1Nome);
-            this.Controls.Add(this.textBoxTitulo);
             this.Controls.Add(this.radioButtonTitulo);
             this.Controls.Add(this.radioButtonNome);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonInserir);
             this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.textBoxNome);
+            this.Controls.Add(this.textBoxBuscar);
             this.Name = "FormConsultaEleitor";
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.FormConsultaEleitor_Load);
@@ -274,16 +263,13 @@
 
         private BindingSource bindingSourceEleitor;
         private DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
-        private TextBox textBoxNome;
+        private TextBox textBoxBuscar;
         private Button buttonBuscar;
         private Button buttonInserir;
         private Label label2;
         private Button buttonExcluir;
         private RadioButton radioButtonNome;
         private RadioButton radioButtonTitulo;
-        private TextBox textBoxTitulo;
-        private Label label1Nome;
-        private Label labelTituko;
         private Label labelAlterar;
         private Button buttonAlterar;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -293,5 +279,6 @@
         private DataGridViewTextBoxColumn tituloEleitorDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn votouDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private Button buttonAtualizar;
     }
 }

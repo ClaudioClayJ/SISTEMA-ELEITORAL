@@ -23,18 +23,21 @@ namespace UiTerminalWindows
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             EleicaoBLL eleicaoBLL = new EleicaoBLL();
+
+            if(textBoxBuscar.Text == "")
+            {
+                radioButtonTodos.Checked = true;
+                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarTodos();
+            }
             if (radioButtonAno.Checked)
             {
-                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarPorAno(Convert.ToInt32(textBoxAno.Text));
+                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarPorAno(Convert.ToInt32(textBoxBuscar.Text));
             }
             else if (radioButtonTurno.Checked)
             {
-                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarPorTurno(Convert.ToInt32(textBoxTurno.Text));
+                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarPorTurno(Convert.ToInt32(textBoxBuscar.Text));
             }
-            else if (radioButtonTodos.Checked)
-            {
-                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarTodos();
-            }
+           
         }
 
         private void FormConsultaEleicao_Load(object sender, EventArgs e)
@@ -68,6 +71,17 @@ namespace UiTerminalWindows
             using (FormCadastroEleicao frm = new FormCadastroEleicao(Convert.ToInt32(((DataRowView)bindingSourceEleicao.Current).Row["Id"])))
             {
                 frm.ShowDialog();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EleicaoBLL eleicaoBLL = new EleicaoBLL();
+
+            if (textBoxBuscar.Text == "")
+            {
+                radioButtonTodos.Checked = true;
+                bindingSourceEleicao.DataSource = eleicaoBLL.BuscarTodos();
             }
         }
     }

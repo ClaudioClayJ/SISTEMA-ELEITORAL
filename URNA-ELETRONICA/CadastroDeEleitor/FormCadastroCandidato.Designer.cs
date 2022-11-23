@@ -63,7 +63,7 @@
             // LabelNumero
             // 
             this.LabelNumero.AutoSize = true;
-            this.LabelNumero.Location = new System.Drawing.Point(3, 141);
+            this.LabelNumero.Location = new System.Drawing.Point(3, 147);
             this.LabelNumero.Name = "LabelNumero";
             this.LabelNumero.Size = new System.Drawing.Size(63, 20);
             this.LabelNumero.TabIndex = 2;
@@ -91,7 +91,7 @@
             // 
             // buttonSalvarCandidato
             // 
-            this.buttonSalvarCandidato.Location = new System.Drawing.Point(494, 409);
+            this.buttonSalvarCandidato.Location = new System.Drawing.Point(80, 255);
             this.buttonSalvarCandidato.Name = "buttonSalvarCandidato";
             this.buttonSalvarCandidato.Size = new System.Drawing.Size(94, 29);
             this.buttonSalvarCandidato.TabIndex = 7;
@@ -101,7 +101,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(685, 409);
+            this.buttonCancelar.Location = new System.Drawing.Point(272, 255);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 8;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 559);
+            this.ClientSize = new System.Drawing.Size(495, 401);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvarCandidato);
             this.Controls.Add(this.textBoxNumero);
